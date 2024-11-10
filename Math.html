@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Math</title>
+</head>
+<script type="text/javascript">
+	function GetPI() {
+	var x = Math.PI;
+	alert(x);
+	}
+	function Round() {
+	var x = 3.5;
+	var y = Math.round(x);
+	alert(y);
+	}
+	function GetPow() {
+	var x = 5;
+	var y = Math.pow(x,3);
+	alert(y);
+	}
+	function Getsqrt() {
+	var x = Math.sqrt(64);
+	alert(x);
+	}
+	function Getabs() {
+	var x = -67;
+	var y = Math.abs(x);
+	alert(y);
+	}
+	function Getceil() {
+	var x = 3.1;
+	var y = Math.ceil(x);
+	alert(y);
+	}
+	function Getfloor() {
+	var x = 3.4;
+	var y = Math.floor(x);
+	alert(y);
+	}
+	function min() {
+	var y = Math.min(34,67,5);
+	alert(y);
+	}
+	function max() {
+	var y = Math.max(34,67,5);
+	alert(y);
+	}
+	function Getrandom() {
+	var x = Math.random() * 10000;
+	alert(x);
+	var y = Math.floor(x);
+	alert("Your OTP is " + y);
+	}
+</script>
+<body>
+	<button onclick="GetPI()">PI</button>
+	<button onclick="Round()">Round</button>
+	<button onclick="GetPow()">Power</button>
+	<button onclick="Getsqrt()">Sqrt</button>
+	<button onclick="Getabs()">Abs</button>
+	<button onclick="Getceil()">Ceil</button>
+	<button onclick="Getfloor()">Floor</button>
+	<button onclick="min()">Min</button>
+	<button onclick="max()">Max</button>
+	<button onclick="Getrandom()">Random</button>
+</body>
+</html>
