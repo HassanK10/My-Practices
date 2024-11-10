@@ -1,0 +1,6 @@
+{
+    "name" : "hassan",
+    "marks" : 90,
+    "res" : true,
+    "foodItems" : ["Apple", "Strawberry", 89, "Dates", true, {"a":"hello"}]   
+}
