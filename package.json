@@ -4,3 +4,13 @@
     "res" : true,
     "foodItems" : ["Apple", "Strawberry", 89, "Dates", true, {"a":"hello"}]   
 }
+// myJson = `{
+//    "name" : "hassan",
+//    "marks" : 90,
+//    "res" : true,
+//    "foodItems" : ["Apple", "Strawberry", 89, "Dates", true, {"a":"hello"}]   
+//}`;
+//Parsed = JSON.parse(myJson);
+//Parsed["name"]
+//Parsed[foodItems]
+//Parsed[foodItems][5][a]
