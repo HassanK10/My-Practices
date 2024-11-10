@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Validation</title>
+</head>
+<body>
+    <h2> Please Enter Your Number</h2>
+    <input id="inp" type="text" onkeyup="valid(this)"/>
+    <div id="num"></div>
+</body>
+<script type="text/javascript">
+    function valid(elm){
+        document.getElementById("num").style.color = "red";
+        if (isNaN(elm.value)){
+            document.getElementById("num").innerText = "Please Enter Numbers Only!";
+        }else{
+            document.getElementById("num").innerText = "";
+            if (elm.value.length > 11){
+                document.getElementById("num").innerText = "Please Enter 11 Digits Only!";
+            }
+            else{
+                document.getElementById("num").innerText = "";
+            }
+        }
+    }
+</script>
+</html>

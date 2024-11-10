@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Get Attribute </title>
+        <style text\css;>
+            .red{
+                color: red;
+                font-size: 50px;
+                font-family: sans-serif;
+            }
+            .blue{
+                color: blue;
+                font-size: 55px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .yellow{
+                color: yellow;
+                font-size: 60px;
+                font-family: 'Times New Roman', Times, serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="test" class="red">
+            <h1> Hemlo Jeeeee </h1> 
+        </div>
+        <button onclick="attr()"> Click </button>
+        <h1 id="res"></h1>
+    </body>
+    <script type="text/javascript">
+        var tr = document.getElementById("test");
+        function attr(){
+            var hel = tr.getAttribute("class");
+            var hy = document.getElementById("res").innerText = hel;
+            if(hel == "red"){
+                tr.setAttribute("class","blue");
+            }
+            if(hel == "blue"){
+                tr.setAttribute("class", "red");
+            }    
+            if(hel == "blue"){
+                tr.setAttribute("class","yellow");
+            }
+            if(hel == "yellow"){
+                tr.setAttribute("class","red");        
+            }
+        } 
+    </script>
+</html>

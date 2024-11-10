@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <center>
+    <div class="background">
+        <div class="login-container">
+            <form action="#">
+                <h2>Login To HK Tech</h2>
+                <div class="input-container">
+                    <input type="text" required>
+                    <label>Username</label>
+                    <div class="underline"></div>
+                </div>
+                <div class="input-container">
+                    <input type="password" required id="pass" onkeyup="check(this.value)">
+                    <label>Password</label>
+                    <div class="underline"></div>
+                </div>
+                <div class="input-container">
+                    <input type="password">
+                    <label>Confirm Password</label>
+                    <div class="underline"></div>
+                </div>
+                <error id="alert" style="color: red;"></error>
+                <error id="err" style="color: red;"></error>
+                <div>
+                    <h5 class="passcheck"> Password must contain 8 characters! </h5>
+                    <h5 class="passcheck"> Password must contain one uppercase character! </h5>
+                    <h5 class="passcheck"> Password must contain one lowercase character! </h5>
+                    <h5 class="passcheck"> Password must contain one special character! </h5>
+                    <h5 class="passcheck"> Password must contain one numerical character! </h5>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    <h1 id="check"></h1>
+</center>
+</body>
+<script type="text/javascript">
+    function check(data){
+        var pass = document.getElementsByClassName("passcheck");
+        const chr = new RegExp("(?=.{8,})");
+        const uchr = new RegExp("(?=.*[A-Z])");
+        const lchr = new RegExp("(?=.*[a-z])");
+        const schr = new RegExp("(?=.*[!@#\$%\^&\*])");
+        const nchr = new RegExp("(?=.*[0-9])");
+        if(chr.test(data)){
+            pass[0].style.color = "green";
+        }else{
+            pass[0].style.color = "gray";
+        }
+        if(uchr.test(data)){
+            pass[1].style.color = "green";
+        }else{
+            pass[1].style.color = "gray";
+        }
+        if(lchr.test(data)){
+            pass[2].style.color = "green";
+        }else{
+            pass[2].style.color = "gray";
+        }
+        if(schr.test(data)){
+            pass[3].style.color = "green";
+        }else{
+            pass[3].style.color = "gray";
+        }
+        if(nchr.test(data)){
+            pass[4].style.color = "green";
+        }else{
+            pass[4].style.color = "gray";
+        }
+    }
+    var pattern = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/;
+    var date = "01/01/23";
+    alert(pattern.test(date));
+</script>
+</html>

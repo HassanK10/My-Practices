@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <center>
+    <div class="background">
+        <div class="login-container">
+            <form action="#" onsubmit="return validate()">
+                <h2>Login To HK Tech</h2>
+                <div class="input-container">
+                    <input type="text" required onkeyup="white(this.value)">
+                    <label>Username</label>
+                    <div class="underline"></div>
+                </div>
+                <div class="input-container">
+                    <input type="password" required id="pass" onkeyup="white(this.value)">
+                    <label>Password</label>
+                    <div class="underline"></div>
+                </div>
+                <div class="input-container">
+                    <input type="password"  onkeyup="check(this)">
+                    <label>Confirm Password</label>
+                    <div class="underline"></div>
+                </div>
+                <error id="alert" style="color: red;"></error>
+                <error id="err" style="color: red;"></error>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</center>
+</body>
+<script type="text/javascript">
+    var ch = document.getElementById("pass");
+    var flag = 1;
+    function check(elem){
+        if(elem.value.length > 0){
+            if(elem.value != ch.value){
+                document.getElementById("alert").innerText = "Confirm Password does not match!";
+                flag = 0;
+            }else{
+                document.getElementById("alert").innerText = "";
+                flag = 1;
+            }
+        }else{
+            document.getElementById("alert").innerText = "Please Confirm Your Password!";
+            flag = 0;
+        }
+    }
+    function validate(){
+        if(flag == 1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    window.addEventListener("keyup",event =>{
+        var isCaps = event.getModifierState("CapsLock");
+        if(isCaps){
+            document.getElementById("err").innerText = "WARNING! CapsLock is on!"
+        }else{
+            document.getElementById("err").innerText = ""
+        }
+    })
+    var pattern = /\s/g;
+    var alt = document.getElementById("alert");
+    function white(elem){
+        var isSpace = pattern.test(elem);
+        if(isSpace){
+            alt.innerText = "Blank Spaces are not Allowed!"
+        }else{
+            alt.innerText = ""
+        }
+    } 
+</script>
+</html>
